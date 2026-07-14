@@ -28,6 +28,11 @@ st.markdown("""
         font-family: 'Prompt', sans-serif;
     }
 
+    #MainMenu,
+    footer {
+        visibility: hidden;
+    }
+
     /* Main container */
     .main-container {
         background: rgba(255, 255, 255, 0.95);
