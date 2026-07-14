@@ -28,9 +28,6 @@ st.markdown("""
         font-family: 'Prompt', sans-serif;
     }
 
-    /* ซ่อนเมนู Streamlit default */
-    #MainMenu, header, footer {visibility: hidden;}
-
     /* Main container */
     .main-container {
         background: rgba(255, 255, 255, 0.95);
