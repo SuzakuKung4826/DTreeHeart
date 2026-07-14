@@ -149,6 +149,17 @@ st.markdown("""
     [data-testid="stSidebar"] h3, [data-testid="stSidebar"] label {
         color: white !important;
     }
+            
+    /* แสดงปุ่มเปิด Sidebar */
+    button[kind="header"]{
+        display:block !important;
+    }
+
+    [data-testid="collapsedControl"]{
+        display:flex !important;
+        visibility:visible !important;
+        opacity:1 !important;
+    }
 
     /* Button */
     .stButton > button {
