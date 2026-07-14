@@ -168,6 +168,24 @@ st.markdown("""
         box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
     }
 
+    /* Toggle button */
+    .toggle-btn {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white !important;
+        border: none;
+        border-radius: 50px;
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .toggle-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+    }
+
     /* Metric cards */
     .metric-card {
         background: white;
@@ -234,15 +252,25 @@ feature_mapping = {
 
 
 # ============================================================
-# 🎨 Header
+# 🎨 Header + Toggle Button
 # ============================================================
-st.markdown("""
-<div class="main-header">
-    <div class="heart-icon">❤️</div>
-    <h1>ระบบทำนายโรคหัวใจ</h1>
-    <p>Heart Disease Prediction System — ด้วย Machine Learning</p>
-</div>
-""", unsafe_allow_html=True)
+col_toggle, col_header = st.columns([1, 8])
+
+with col_toggle:
+    st.markdown("<br>", unsafe_allow_html=True)
+    if st.button("☰ เมนู", key="toggle_sidebar"):
+        if 'sidebar_state' not in st.session_state:
+            st.session_state.sidebar_state = True
+        st.session_state.sidebar_state = not st.session_state.sidebar_state
+
+with col_header:
+    st.markdown("""
+    <div class="main-header">
+        <div class="heart-icon">❤️</div>
+        <h1>ระบบทำนายโรคหัวใจ</h1>
+        <p>Heart Disease Prediction System — ด้วย Machine Learning</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # ============================================================
